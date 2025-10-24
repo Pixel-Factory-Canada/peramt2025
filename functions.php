@@ -5,3 +5,11 @@ function theme_slug_setup()
 {
     add_theme_support('wp-block-styles');
 }
+
+
+add_action('wp_enqueue_scripts', 'theme_slug_enqueue_styles');
+
+function theme_slug_enqueue_styles()
+{
+    wp_enqueue_style('theme-slug-style', get_template_directory_uri() . '/src/output.css');
+}
